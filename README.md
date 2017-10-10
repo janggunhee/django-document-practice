@@ -92,3 +92,4 @@ INSTALLED_APPS = [
 ./manage.py migrate
 ```
 
+
