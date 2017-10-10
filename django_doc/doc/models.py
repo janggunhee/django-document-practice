@@ -19,3 +19,14 @@ class Fruit(models.Model):
         max_length=30,
         primary_key=True
     )
+
+class Manufacturer(models.Model):
+    name = models.CharField(max_length=50)
+
+
+class Car(models.Model):
+    manufacturer = models.ForeignKey(
+        Manufacturer,
+        on_delete=models.CASCADE
+    )
+    name = models.CharField(max_length=50, blank=True)
