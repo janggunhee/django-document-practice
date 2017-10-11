@@ -40,3 +40,10 @@ class User(models.Model):
 
     def __str__(self):
         return self.name
+
+    def save(self, *args, **kwargs):
+        print('User save')
+        if self.teacher and self.teacher.pk == self.pk:
+            print('teacher cannot self')
+            self.teacher = None
+        super().save(*args, **kwargs)
