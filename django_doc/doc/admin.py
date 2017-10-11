@@ -1,6 +1,14 @@
 from django.contrib import admin
 
-from doc.models import Car, Manufacturer, User, Fruit, Person, Pizza, Topping, TwitterUser
+from .models import (
+    Car,
+    Manufacturer,
+    User,
+    Fruit,
+    Person,
+    Pizza, Topping,
+    FacebookUser, InstagramUser
+)
 
 admin.site.register(Car)
 admin.site.register(Manufacturer)
@@ -9,4 +17,6 @@ admin.site.register(Fruit)
 admin.site.register(Person)
 admin.site.register(Pizza)
 admin.site.register(Topping)
-admin.site.register(TwitterUser)
+admin.site.register(FacebookUser)
+admin.site.register(InstagramUser)
+
