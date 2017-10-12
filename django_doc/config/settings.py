@@ -42,6 +42,8 @@ INSTALLED_APPS = [
 
     'doc',
 
+    'inheritance',
+
     'django_extensions',
 ]
 
