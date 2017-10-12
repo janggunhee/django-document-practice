@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'inheritance',
 
     'django_extensions',
+
+    'making_queries'
 ]
 
 MIDDLEWARE = [
