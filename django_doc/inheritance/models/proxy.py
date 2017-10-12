@@ -11,12 +11,16 @@ __all__ = (
 # Champion 전체에 대해서 query를 날릴때에도 각각에 대해서 날릴때 에도
 # 효율적으로 사용할 수 있다
 
+# 상속을 반드시 받아야 했던  Abstract base classes
+# 상속을 받아도 소용 없는 것이 Multi-table inheritance
+# 자동으로 상속을 받아지는 proxy
 
-# class ChampionInfo(models.Model):
-#     nickname = models.CharField(max_length=30)
-#
-#     class Meta:
-#         abstract = True
+
+class ChampionInfo(models.Model):
+    nickname = models.CharField(max_length=30)
+
+    class Meta:
+        abstract = True
 
 
 class Champion(models.Model):
@@ -29,19 +33,22 @@ class Champion(models.Model):
     rank = models.PositiveIntegerField(default=0)
     name = models.CharField(max_length=30)
 
+    class Meta:
+        verbose_name = '챔피언'
+        ordering = ['rank']
+
     def __str__(self):
         return f'{self.name} ({self.get_champion_type_display()})'
 
-
-
 class SupporterManager(models.Manager):
     def get_queryset(self):
-        return  super().get_queryset().filter(champion_type='supporter')
+        return super().get_queryset().filter(champion_type='supporter')
 
 class Supporter(Champion):
     objects = SupporterManager()
 
     class Meta:
+        ordering = ['name']
         proxy = True
 
     def buy_supporter_item(self):
