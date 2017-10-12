@@ -8,8 +8,6 @@ class CommonInfo(models.Model):
     class Mata:
         abstract =True
 
-class Student(CommonInfo):
-    home_group = models.CharField(max_length=5)
 
 
 class Teacher(CommonInfo):
