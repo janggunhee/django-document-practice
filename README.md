@@ -23,21 +23,34 @@ vi .gitignore
 ```commandline
 cp ../-폴더명-/-폴더명-/ .
 ```
-4. 가상환경 
-
-가상환경 설치
-```commandline
-pyenv virtualenv 3.6.2 fc-<가상환경 명>
-```
-가상환경 local 지정
-```commandline
-pyenv local fc-djgirls
-```
 .gitignore 생성 사이트 
 
 https://www.gitignore.io/
 
+4. 가상환경 
+
+가상환경 설치
+```commandline
+pyenv virtualenv 3.6.2 fc-<가상환경 이름>
+```
+가상환경 local 지정
+```commandline
+pyenv local fc-<가상환경 이름>
+```
+가상환경 설치 확인 
+```commandline
+pyenv version
+```
+
 5. Django 프로젝트 시작
+
+django 설치
+
+```commandline
+
+pip install django
+
+```
 
 ```commandline
 django-admin startproject <프로젝트명>
