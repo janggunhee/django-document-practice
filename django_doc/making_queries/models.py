@@ -18,7 +18,6 @@ class Author(models.Model):
     def __str__(self):
         return self.name
 
-
 class Entry(models.Model):
     blog = models.ForeignKey(
         Blog, on_delete=models.CASCADE
@@ -31,7 +30,7 @@ class Entry(models.Model):
     mod_date = models.DateField(
         blank=True, null=True
     )
-    authors = models.ManyToManyField(Author)
+    authors = models.ManyToManyField(Author)   # 저자가 여러명 ;
     n_comments = models.IntegerField(default=0)
     n_pingbacks = models.IntegerField(default=0)
     rating = models.IntegerField(default=0)
